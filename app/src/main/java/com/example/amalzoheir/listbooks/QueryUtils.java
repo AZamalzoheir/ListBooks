@@ -1,7 +1,9 @@
 package com.example.amalzoheir.listbooks;
 
+import android.content.Context;
 import android.icu.lang.UCharacter;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
