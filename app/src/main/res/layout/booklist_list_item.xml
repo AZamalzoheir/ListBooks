@@ -5,15 +5,21 @@
 
     <TextView
         android:id="@+id/book_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="name" />
+        android:text="nameoooooooooooooooooooooooooooooooooooooooooooooooooooooo"
+        android:textSize="@dimen/text_size"
+        android:padding="@dimen/pading_for_layout"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/book_author"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="author" />
+        android:text="authorooooooooooooooooooooooooooooooooooooooooooooooooooo"
+        android:textSize="@dimen/text_size"
+        android:padding="@dimen/pading_for_layout"
+        android:textColor="#000000"/>
 </LinearLayout>

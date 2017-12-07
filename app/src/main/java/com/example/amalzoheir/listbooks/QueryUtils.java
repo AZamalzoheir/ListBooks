@@ -26,9 +26,9 @@ import java.util.ArrayList;
  * Created by Amalzoheir on 12/5/2017.
  */
 
-public class QueryUtils {
+public final class QueryUtils {
 
-    public QueryUtils() {
+    private QueryUtils() {
 
     }
 
@@ -113,7 +113,7 @@ public class QueryUtils {
             }
             return output.toString();
         }
-    public static ArrayList<ListBook> fetchEarthquakeData(String requestUrl) throws MalformedInputException{
+    public static ArrayList<ListBook> fetchListbookData(String requestUrl) throws MalformedInputException{
         // Create URL object
         URL url =createUrl(requestUrl);
 
