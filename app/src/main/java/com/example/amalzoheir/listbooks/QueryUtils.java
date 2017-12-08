@@ -47,7 +47,7 @@ public final class QueryUtils {
                 for(int j=0;j<authors.length();j++) {
                     bookAuthor.add(authors.getString(j));
                 }
-                    sBookAuthor=bookAuthor.get(i);
+                sBookAuthor=bookAuthor.get(i);
                 listBooks.add(new ListBook(bookName,sBookAuthor));
             }
         } catch (JSONException e) {
