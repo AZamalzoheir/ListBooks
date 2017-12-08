@@ -2,6 +2,7 @@ package com.example.amalzoheir.listbooks;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,13 +17,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ListBookActivity extends AppCompatActivity implements LoaderCallbacks<ArrayList<ListBook>>{
-    public static final String URL_BOOK_SEARCh = "https://www.googleapis.com/books/v1/volumes?q=math";
+
+    String query="";
+    public String URL_BOOK_SEARCh;
     ListBookAdapter mAdapter;
     TextView emptyListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_book);
+        Intent intent=getIntent();
+        query=intent.getStringExtra("query");
+        URL_BOOK_SEARCh = "https://www.googleapis.com/books/v1/volumes?q="+query;
         ListView listBookListView = (ListView) findViewById(R.id.list);
         emptyListView=(TextView)findViewById(R.id.empty);
         ArrayList<ListBook> listbooks = new ArrayList<>();
