@@ -45,11 +45,9 @@ public final class QueryUtils {
                 JSONArray authors = volumInfo.getJSONArray("authors");
                 String bookName = volumInfo.getString("title");
                 for(int j=0;j<authors.length();j++) {
-                     bookAuthor.add(authors.getString(j));
+                    bookAuthor.add(authors.getString(j));
                 }
-                for(int j=0;j<bookAuthor.size();j++) {
                     sBookAuthor=bookAuthor.get(i);
-                }
                 listBooks.add(new ListBook(bookName,sBookAuthor));
             }
         } catch (JSONException e) {
