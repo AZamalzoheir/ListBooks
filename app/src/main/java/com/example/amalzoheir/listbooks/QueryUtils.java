@@ -34,7 +34,8 @@ public final class QueryUtils {
 
     public static ArrayList<ListBook> extractListBooks(String bURL) {
         ArrayList<ListBook> listBooks = new ArrayList<>();
-        StringBuilder bookAuthor=new StringBuilder();
+        ArrayList<String> bookAuthor=new ArrayList<>();
+        String sBookAuthor="";
         try {
             JSONObject root = new JSONObject(bURL);
             JSONArray items = root.getJSONArray("items");
@@ -44,9 +45,11 @@ public final class QueryUtils {
                 JSONArray authors = volumInfo.getJSONArray("authors");
                 String bookName = volumInfo.getString("title");
                 for(int j=0;j<authors.length();j++) {
-                     bookAuthor.append(authors.getString(j));
+                     bookAuthor.add(authors.getString(j));
                 }
-                String sBookAuthor=bookAuthor.toString();
+                for(int j=0;j<bookAuthor.size();j++) {
+                    sBookAuthor=bookAuthor.get(i);
+                }
                 listBooks.add(new ListBook(bookName,sBookAuthor));
             }
         } catch (JSONException e) {
